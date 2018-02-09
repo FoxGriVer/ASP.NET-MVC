@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <h3>Форма оформления кредита</h3>
+            <form method="post" action="">
+                @*<input type="hidden" value="@ViewBag.BookId" name="BookId" />*@
+                <table>
+                    <tr>
+                        <td><p>Процентная ставка: </p></td>
+                        <td><input type="text" name="Percent" /> </td>
+                    </tr>
+                    <tr>
+                        <td><p>Сумма кредита: </p></td>
+                        <td><input type="text" name="AmmountOfMoney" /> </td>
+                    </tr>
+                    <tr>
+                        <td><p>Количество месяцев:</p></td>
+                        <td>
+                            <input type="text" name="NumberOfMonths" />
+                        </td>
+                    </tr>
+                    <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    
+</div>

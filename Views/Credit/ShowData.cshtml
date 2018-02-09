@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BankSystem.Models.Credit>
+
+@{
+    ViewBag.Title = "ShowData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Информация по всем кредитам</h2>
+
+<p>
+    @Html.ActionLink("Рассчитать новый кредит", "TakeCredit")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <h3>Проценты</h3>
+        </th>
+        <th>
+            <h3>Кол-во месяцев</h3>
+        </th>
+        <th>
+            <h3>Сумма кредита</h3>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Percent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfMonths)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmmountOfMoney)
+        </td>
+        <td>
+            @Html.ActionLink("Дифференцированная схема", "CountDiffPercent", new { id=item.Id }) |
+            @Html.ActionLink("Аннуитетная схема ", "CountPercent", new { id=item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

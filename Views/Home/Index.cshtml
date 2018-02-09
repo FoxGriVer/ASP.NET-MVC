@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script>
+function facechange (objName) {
+if ( $(objName).css('display') == 'none' ) {
+$(objName).animate({height: 'show'}, 300);
+} else {
+$(objName).animate({height: 'hide'}, 200);
+}
+};
+</script>
+<div class="line">
+    <div class="row">
+        @*<div class="col-md-4">
+                    <div id="block">
+                        <ul>
+                            <li><a href="#">Какой-то текст</a></li>
+                            <li><a href="#">Какой-то текст</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" onclick="facechange('#block'); return false">Кнопка открытия/закрытия</a>
+            </div>*@
+        <div class="col-md-4 col-md-offset-8 col-b">
+            <h2>Курс валют на сегодня</h2>
+            <p><font size="5">Доллар США $ = <strong>@ViewBag.Dollar</strong> руб </font></p>
+            <p><font size="5">Евро € = <strong>@ViewBag.Euro</strong> руб </font></p>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <h2>Расчет ежемесячного платежа по кредиту</h2>
+    <p>Кредитный калькулятор – для онлайн расчета суммы платежа, переплаты, реальной процентной ставки</p>
+    <a class="btn btn-default" href="#" onclick="facechange('#block'); return false">Аннуитерная схема &raquo;</a>
+    <a class="btn btn-default" href="#" onclick="facechange('#block2'); return false">Дифференцированная схема &raquo;</a>
+    <div id="block" hidden ="hidden" >        
+            Аннуитетный платеж - это равный по сумме ежемесячный платеж по кредиту, который включает в себя сумму начисленных процентов за кредит банка и сумму основного долга       
+    </div>    
+    <div id="block2" hidden="hidden">
+        Дифференцированный платеж -  это ежемесячный платеж, уменьшающийся к концу срока кредитования, и состоит из выплачиваемой постоянной доли основного долга и процентов на невыплаченный остаток кредита
+    </div>
+    <p><a class="btn btn-default" href="/Credit/TakeCredit">Расчитать кредит &raquo;</a></p>
+</div>   
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+<style>
+    .line {margin-bottom: 85px;}
+</style>

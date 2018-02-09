@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BankSystem.Controllers.CreditController.Diffs>
+
+@{
+    ViewBag.Title = "CountDiffPercent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            <h2>Месяц</h2>
+        </th>
+        <th>
+            <h2>Платеж</h2>
+        </th>
+        <th>
+            <h2>Проценты</h2>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => b.month).
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => b.AmmountPerMonth) руб.
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => b.p_i) руб.
+            </td>
+        </tr>
+    }
+
+</table>
+
